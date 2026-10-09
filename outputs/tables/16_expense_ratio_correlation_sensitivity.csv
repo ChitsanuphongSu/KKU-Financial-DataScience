@@ -1,0 +1,3 @@
+﻿Scenario,Variable_X,Variable_Y,N,Spearman_rho,P_value,Direction,Strength,Note
+Primary: all valid observations,ExpenseRatio,MoneySufficiency_Code,26,0.2043302103351254,0.31328433578321085,positive,weak,Primary retains the verified influential observation.
+Descriptive sensitivity analysis excluding the verified influential observation,ExpenseRatio,MoneySufficiency_Code,25,0.14670430124700226,0.48122593870306485,positive,very weak,Influence check only; not corrected or preferred data.

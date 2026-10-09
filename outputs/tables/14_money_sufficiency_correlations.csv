@@ -1,0 +1,5 @@
+﻿Variable_X,Variable_Y,N,Spearman_rho,P_value,Direction,Strength,Interpretation_Note
+ExpenseRatio,MoneySufficiency_Code,26,0.2043302103351254,0.31328433578321085,positive,weak,Higher numerical values tended to align with higher MoneySufficiency_Code (greater insufficiency). Exploratory association; not causal.
+TotalIncome,MoneySufficiency_Code,29,-0.1915298504571878,0.3208839558022099,negative,very weak,Higher numerical values tended to align with lower MoneySufficiency_Code (less insufficiency). Exploratory association; not causal.
+TotalExpense,MoneySufficiency_Code,27,0.07114075416201986,0.7185140742962852,positive,very weak,Higher numerical values tended to align with higher MoneySufficiency_Code (greater insufficiency). Exploratory association; not causal.
+SavingAmount,MoneySufficiency_Code,30,-0.3696220747519373,0.046597670116494176,negative,weak,Higher numerical values tended to align with lower MoneySufficiency_Code (less insufficiency). Exploratory association; not causal.

@@ -1,0 +1,7 @@
+﻿Representation,Level_or_Group,Level_Label,N,Percent
+Ordinal,1,Level 1,6,20.0
+Ordinal,2,Level 2,14,46.666666666666664
+Ordinal,3,Level 3,7,23.333333333333332
+Ordinal,4,Level 4,3,10.0
+Binary group,Sufficient,,20,66.66666666666666
+Binary group,Insufficient,,10,33.33333333333333

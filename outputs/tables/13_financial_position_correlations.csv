@@ -1,0 +1,4 @@
+﻿Variable_X,Variable_Y,N,Spearman_rho,P_value,Direction,Strength,Mathematical_Coupling_Note,Interpretation_Note
+TotalIncome,NetBalance,26,0.44650373796744375,0.023098845057747112,positive,moderate,NetBalance = TotalIncome − TotalExpense; relationship is mathematically coupled.,Exploratory rank association; does not establish causation.
+SavingAmount,NetBalance,26,0.1964490441260888,0.33293335333233337,positive,very weak,No mathematical coupling.,Exploratory rank association; does not establish causation.
+ShoppingExpense,NetBalance,26,0.0924101171761897,0.6550172491375431,positive,very weak,"NetBalance includes TotalExpense, of which ShoppingExpense is a component; partial mathematical coupling.",Exploratory rank association; does not establish causation.
