@@ -1,5 +1,5 @@
-# Cleaning Documentation
+# เอกสารการทำความสะอาดข้อมูล
 
-The approved pipeline preserved RAW_DATA.csv and cleaned at cell level. Exact unambiguous monetary formatting such as commas or บาท was standardized. Invalid text, lower-bound values such as `5000+`, and ambiguous periods such as `3300/เทอม` became missing for exact monetary analysis rather than guessed values. Zero remained a genuine zero. Respondents were retained where possible.
+pipeline ที่อนุมัติแล้วเก็บรักษา `RAW_DATA.csv` ไว้และทำความสะอาดระดับเซลล์ รูปแบบจำนวนเงินที่ชัดเจน เช่น เครื่องหมายจุลภาคหรือคำว่า บาท ถูกทำให้เป็นมาตรฐาน ข้อความไม่ถูกต้อง ค่าขอบล่างเช่น `5000+` และช่วงเวลาที่กำกวมเช่น `3300/เทอม` ถูกกำหนดเป็นค่าสูญหายสำหรับการวิเคราะห์จำนวนเงินแบบแม่นยำ แทนการคาดเดาค่า ศูนย์ยังคงเป็นศูนย์จริง และคงผู้ตอบไว้เท่าที่ทำได้
 
-The approved review retained HousingExpense=32,000 and ExpenseRatio=4,540% as reported after verification. These are influential observations, not automatic errors.
+การตรวจสอบที่อนุมัติแล้วคง `HousingExpense=32,000` และ `ExpenseRatio=4,540%` ตามที่รายงานหลังการตรวจสอบ ค่าดังกล่าวเป็นค่าที่มีอิทธิพลสูง ไม่ใช่ข้อผิดพลาดโดยอัตโนมัติ

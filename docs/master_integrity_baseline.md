@@ -1,8 +1,8 @@
-# Master Integrity Baseline
+# ค่าอ้างอิงความครบถ้วนของโครงการเดิม
 
-Captured before repository packaging from the read-only master project.
+บันทึกก่อนจัดแพ็กเกจ repository จากโครงการอ้างอิงแบบ read-only
 
-| Master file | SHA-256 |
+| ไฟล์อ้างอิงเดิม | SHA-256 |
 |---|---|
 | RAW_DATA.csv | A4B907893C14AE9B57A282200614F6753E8E7AEFE484F957810641F955534E4D |
 | KKU_Financial_Cleaning.xlsx | 32B992EAE325EBC40BBEA30053CE99F6B6662839D69487293BCB353E2582E04E |
@@ -14,4 +14,4 @@ Captured before repository packaging from the read-only master project.
 | src/eda_phase2_correlation.py | F74AF16A99CB0A500D80B720D0ADAE43BAB934F0EE730D80A37D418B537FF585 |
 | Final PowerPoint | 09E09B53F0148AC912382A97B4A1F656A56BFF11710F3B3738E8623CBB7B5BB5 |
 
-The post-packaging comparison must match every value above.
+การเปรียบเทียบหลังจัดแพ็กเกจต้องตรงกับค่าข้างต้นทุกค่า

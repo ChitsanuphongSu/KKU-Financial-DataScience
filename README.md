@@ -1,83 +1,119 @@
-# KKU Student Financial Behavior Analysis
+# การวิเคราะห์พฤติกรรมการใช้จ่ายและปัจจัยที่สัมพันธ์กับปัญหาการเงินไม่เพียงพอของนักศึกษามหาวิทยาลัยขอนแก่น
 
-## Overview
+> โครงงาน Data Science ที่ใช้ข้อมูลแบบสอบถามจากนักศึกษามหาวิทยาลัยขอนแก่นจำนวน 30 คน เพื่อสำรวจรูปแบบรายรับ รายจ่าย เงินออม และปัจจัยที่สัมพันธ์กับความเพียงพอทางการเงิน
 
-An exploratory Data Science project on student income, expenses, saving, financial sufficiency, and financial behavior among a voluntary KKU survey sample.
+## 🔎 โปรเจกต์นี้ทำอะไร?
 
-## Research Objective
+โครงงานนี้เป็นการวิเคราะห์เชิงสำรวจ (Exploratory Data Analysis: EDA) ของกลุ่มตัวอย่างที่ตอบแบบสอบถามโดยสมัครใจ ศึกษารายรับ รายจ่าย เงินออม และความเพียงพอทางการเงินของนักศึกษา พร้อมสร้างตัวชี้วัดทางการเงิน วิเคราะห์ความสัมพันธ์แบบสเปียร์แมน (Spearman Correlation) และตรวจสอบความไวของผลเมื่อมีค่าที่มีอิทธิพลสูง
 
-Describe financial patterns in the surveyed group, examine expense composition, and report exploratory associations with financial position and money sufficiency.
+| หัวข้อ | รายละเอียด |
+|---|---|
+| กลุ่มตัวอย่าง | นักศึกษา มข. 30 คน |
+| วิธีเก็บข้อมูล | แบบสอบถามออนไลน์แบบสมัครใจ |
+| รูปแบบข้อมูล | ข้อมูลที่ผู้ตอบรายงานด้วยตนเอง (self-reported) |
+| วิธีวิเคราะห์ | EDA, การเปรียบเทียบกลุ่ม, Spearman Correlation, Sensitivity Analysis |
+| เครื่องมือหลัก | Python และ Jupyter Notebook |
+| ขอบเขต | การวิเคราะห์เชิงสำรวจ ไม่ใช่การอนุมานเชิงสาเหตุ |
 
-## Dataset
+## 🎯 คำถามที่ต้องการศึกษา
 
-The survey contains 30 voluntary, self-reported respondents. This is not a representative estimate for all KKU students. Raw and respondent-level processed data are excluded from this repository to protect privacy.
+- รายรับ รายจ่าย และเงินออมของกลุ่มตัวอย่างมีรูปแบบอย่างไร
+- `NetBalance` ของกรณีที่คำนวณได้มีลักษณะอย่างไร
+- ค่าใช้จ่ายประเภทใดมีสัดส่วนสำคัญ
+- `ExpenseRatio` มีความไวต่อค่าที่มีอิทธิพลสูงเพียงใด
+- รายรับ รายจ่าย เงินออม และรหัสพฤติกรรมทางการเงินมีความสัมพันธ์เชิงสำรวจกับสถานะทางการเงินหรือไม่
 
-## Analytical Workflow
+## 🧭 ขั้นตอนการวิเคราะห์
 
-Survey data → data cleaning → derived indicators → EDA → descriptive group comparison → Spearman correlation → sensitivity analysis → insights → presentation
+แบบสอบถาม → Data Cleaning → สร้างตัวชี้วัดทางการเงิน → EDA → Group Comparison → Spearman Correlation → Sensitivity Analysis → Insights & Recommendations
 
-## Key Variables
+## 🧮 ตัวชี้วัดสำคัญ
 
-`TotalIncome`, `TotalExpense`, `NetBalance`, `ExpenseRatio`, `SavingAmount`, `MoneySufficiency_Code`, and `MoneySufficiency_Group` are described in [docs/data_dictionary.md](docs/data_dictionary.md).
+| ตัวชี้วัด | ความหมาย |
+|---|---|
+| `NetBalance` | `TotalIncome − TotalExpense` ใช้สะท้อนยอดคงเหลือทางการเงิน |
+| `ExpenseRatio` | `TotalExpense / TotalIncome × 100` โดยไม่คำนวณเมื่อรายรับหรือรายจ่ายขาดหาย หรือ `TotalIncome = 0` |
+| `CategoryRatio` | `CategoryExpense / TotalExpense × 100` เพื่อดูสัดส่วนรายจ่ายแต่ละหมวด |
 
-## Methodology
+## 📊 ผลการวิเคราะห์ที่สำคัญ
 
-- Median and IQR describe skewed financial variables.
-- Levels 1–2 form Sufficient and Levels 3–4 form Insufficient for descriptive comparison.
-- Spearman correlations use pairwise complete observations; Phase 2 used two-sided permutation p-values with 20,000 fixed-seed permutations.
-- The valid ExpenseRatio=4,540% case remains in primary analysis and has a disclosed sensitivity check.
+| ประเด็น | ผลที่ได้รับการอนุมัติ |
+|---|---|
+| รายรับ | ค่ามัธยฐาน `TotalIncome` = **THB 8,000** (n=29) |
+| รายจ่าย | ค่ามัธยฐาน `TotalExpense` = **THB 10,100** (n=27) |
+| ยอดคงเหลือ | จาก 26 กรณีที่คำนวณได้: บวก 18, ศูนย์ 2, ลบ 6 |
+| รายจ่ายเด่น | อาหาร: มัธยฐาน THB 4,800, สัดส่วนมัธยฐาน 52.54%; ที่พัก: THB 3,500, 29.55% |
+| เงินออมและความเพียงพอ | `SavingAmount × MoneySufficiency_Code`: rho = -0.370, n=30, permutation p=0.047, **ระดับอ่อน (Weak)** |
 
-## Key Findings
+ค่ามัธยฐานรายรับและรายจ่ายข้างต้นใช้จำนวนข้อมูลที่ใช้ได้ต่างกัน จึงไม่ควรตีความว่าเป็นการเปรียบเทียบรายรับและรายจ่ายแบบรายบุคคล
 
-- Food and housing were the largest typical expense components among 27 complete expense records.
-- NetBalance varied across 26 complete cases: 18 positive, 2 zero, and 6 negative.
-- SavingAmount and MoneySufficiency_Code showed an exploratory negative association, rho=-0.370, n=30, permutation p=0.047, classified as Weak.
+![สรุปยอดคงเหลือ](outputs/figures/public/04_net_balance_summary_public.png)
 
-## Important Methodological Notes
+![สรุปสหสัมพันธ์](outputs/figures/public/07_correlation_summary_public.png)
 
-Correlation does not establish causation. The sample is voluntary and small. `TotalIncome × NetBalance` is mathematically coupled because NetBalance equals TotalIncome minus TotalExpense. Original Likert anchors are unavailable, so behavior variables remain numerical response codes only.
+### การตรวจสอบความไวของ `ExpenseRatio`
 
-## Repository Structure
+พบค่าที่ผ่านการตรวจสอบและมีอิทธิพลสูง ซึ่งส่งผลต่อค่าเฉลี่ยอย่างมาก แต่ค่ามัธยฐานและพิสัยระหว่างควอไทล์ (Interquartile Range: IQR) มีเสถียรภาพกว่า การวิเคราะห์ความไวเป็นเพียงการตรวจสอบอิทธิพลของค่านั้น ไม่ใช่ข้อมูลที่แก้ไขแล้วหรือผลที่ควรเลือกใช้แทนผลหลัก
+
+## ⚠️ การตีความสหสัมพันธ์และรหัสพฤติกรรม
+
+**Correlation ≠ Causation** — ความสัมพันธ์ไม่ใช่เหตุและผล
+
+`TotalIncome × NetBalance` มี mathematical coupling เพราะ `NetBalance = TotalIncome − TotalExpense` จึงไม่ควรตีความค่าสหสัมพันธ์นี้เป็นหลักฐานอิสระทั้งหมด นอกจากนี้รหัสคำตอบ Likert ดั้งเดิมไม่พร้อมใช้งาน จึงรายงานความสัมพันธ์ของรหัสพฤติกรรมเชิงตัวเลขได้ แต่ไม่ตีความว่ารหัสสูง/ต่ำหมายถึงพฤติกรรมดีขึ้น แย่ลง เห็นด้วยมากขึ้น หรือเกิดบ่อยขึ้น
+
+## 📁 โครงสร้าง Repository
 
 ```text
-data/        privacy policy and raw-data exclusion notice
-docs/        methodology, data dictionary, cleaning, privacy, repository audit
-notebooks/   reader-friendly analytical walkthrough
-src/         reusable analysis scripts
-outputs/     approved aggregate tables and aggregate-only public figures
+KKU-Financial-DataScience/
+├── README.md                         หน้าหลักของโครงการ
+├── notebooks/Final_Project_Analysis.ipynb
+├── src/                              สคริปต์วิเคราะห์และสร้างภาพสาธารณะ
+├── outputs/
+│   ├── tables/                       ตารางสรุปแบบ aggregate
+│   └── figures/public/               ภาพสรุปที่ปลอดภัยต่อการเผยแพร่
+├── docs/                             ระเบียบวิธีและเอกสารกำกับ
+├── data/                             นโยบายข้อมูลและคำอธิบายการยกเว้นข้อมูลส่วนบุคคล
+└── requirements.txt
 ```
 
-## Reproducibility
+## 🚀 เริ่มดูโปรเจกต์จากตรงไหน?
 
-The public portion is reproducible from the included aggregate tables, aggregate-only public figures, documentation, and notebook. Full regeneration requires the private raw survey data and private respondent-level workbook, which are intentionally excluded.
+1. อ่าน README นี้
+2. เปิด [Notebook สรุปการวิเคราะห์](notebooks/Final_Project_Analysis.ipynb)
+3. ดู [ภาพสรุปสาธารณะ](outputs/figures/public/)
+4. ดู [ตารางผลสรุป](outputs/tables/)
+5. อ่าน [เอกสารประกอบ](docs/)
 
-## Public GitHub Release
-
-This public package includes the README, aggregate-only walkthrough notebook, source scripts, aggregate tables, public figures under `outputs/figures/public/`, and documentation. It deliberately excludes respondent-level tables, raw-observation plots, and private source data.
-
-## Documentation and Walkthrough
-
-- [Public walkthrough notebook](notebooks/Final_Project_Analysis.ipynb)
-- [Methodology](docs/methodology.md)
-- [Data dictionary](docs/data_dictionary.md)
-- [Cleaning documentation](docs/cleaning_log.md)
-- [Data privacy audit](docs/data_privacy_audit.md)
-
-## How to Run
+## 💻 การใช้งาน
 
 ```powershell
+git clone https://github.com/ChitsanuphongSu/KKU-Financial-DataScience.git
+cd KKU-Financial-DataScience
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter notebook notebooks/Final_Project_Analysis.ipynb
 ```
 
-The copied `src/` pipeline expects private source workbooks at the repository root and is therefore not executed by default in this public-safe copy.
+Notebook สาธารณะเป็น walkthrough ระดับผลสรุป (aggregate-level) การสร้าง pipeline แบบครบถ้วนต้องใช้ข้อมูลต้นทางส่วนบุคคลที่ไม่ได้เผยแพร่
 
-## Presentation
+## 🔒 ความเป็นส่วนตัวของข้อมูล
 
-The final classroom presentation is excluded from the public repository because one appendix visualization contains a respondent-level identifier paired with an individual financial value. It remains appropriate for private instructor distribution under course submission controls.
+GitHub repository นี้ตั้งใจไม่เผยแพร่ข้อมูลแบบสอบถามดิบ ข้อมูลประมวลผลระดับผู้ตอบ ตารางตรวจสอบระดับผู้ตอบ ภาพที่แสดงจุดสังเกตการณ์รายบุคคล และ PowerPoint สำหรับชั้นเรียนที่มีภาพภาคผนวกระดับผู้ตอบ สิ่งที่เผยแพร่ใช้เฉพาะผลสรุปแบบ aggregate หรือภาพที่ผ่านการทำให้ปลอดภัยแล้ว
 
-## Privacy and Limitations
+## ⚠️ ข้อจำกัด
 
-See [docs/data_privacy_audit.md](docs/data_privacy_audit.md) and [docs/methodology.md](docs/methodology.md).
+- กลุ่มตัวอย่างสมัครใจ มีจำนวน 30 คน และเป็นข้อมูล self-reported
+- อาจมีความคลาดเคลื่อนจากการระลึก การประมาณค่า หรือการปัดเศษ
+- จำนวนข้อมูลที่ใช้ได้แตกต่างกันตามตัวแปร
+- ไม่พบ anchors ของ Likert scale ดั้งเดิม
+- สหสัมพันธ์เป็นการสำรวจ และไม่ควรสรุปแทนนักศึกษา มข. ทุกคน
+
+## 📚 เอกสารเพิ่มเติม
+
+- [ระเบียบวิธีวิเคราะห์](docs/methodology.md)
+- [พจนานุกรมข้อมูล](docs/data_dictionary.md)
+- [บันทึกการทำความสะอาดข้อมูล](docs/cleaning_log.md)
+- [การตรวจสอบความเป็นส่วนตัว](docs/data_privacy_audit.md)
+- [บันทึกการตรวจสอบ repository](docs/repository_audit.md)
+- [Notebook สาธารณะ](notebooks/Final_Project_Analysis.ipynb)

@@ -1,18 +1,18 @@
-# Data Dictionary
+# พจนานุกรมข้อมูล (Data Dictionary)
 
-| Variable | Type / unit | Meaning and valid values | Status |
+| ตัวแปร | ประเภท / หน่วย | ความหมายและค่าที่ใช้ได้ | สถานะ |
 |---|---|---|---|
-| FamilyIncome, PartTimeIncome, ScholarshipIncome, OtherIncome | Ratio, THB | Exact monthly income components; NA means unavailable/invalid, not zero | Cleaned input |
-| FoodExpense through OtherExpense | Ratio, THB | Exact monthly expense components; NA means unavailable/invalid, not zero | Cleaned input |
-| SavingAmount | Ratio, THB | Reported monthly saving amount | Cleaned input |
-| TotalIncome | Ratio, THB | Sum of 4 income components; NA if any required component is NA | Derived |
-| TotalExpense | Ratio, THB | Sum of 9 expense components; NA if any required component is NA | Derived |
-| NetBalance | Ratio, THB | TotalIncome minus TotalExpense; NA if either is NA | Derived |
-| ExpenseRatio | Ratio, percent | TotalExpense / TotalIncome × 100; NA for missing denominator/numerator or TotalIncome=0 | Derived |
-| FoodRatio through OtherExpenseRatio | Ratio, percent | CategoryExpense / TotalExpense × 100; NA for missing value or zero/missing total expense | Derived |
+| FamilyIncome, PartTimeIncome, ScholarshipIncome, OtherIncome | Ratio, THB | องค์ประกอบรายรับรายเดือนแบบจำนวนจริง; NA คือไม่มี/ไม่ถูกต้อง ไม่ใช่ศูนย์ | ข้อมูลนำเข้าที่ทำความสะอาดแล้ว |
+| FoodExpense ถึง OtherExpense | Ratio, THB | องค์ประกอบรายจ่ายรายเดือนแบบจำนวนจริง; NA คือไม่มี/ไม่ถูกต้อง ไม่ใช่ศูนย์ | ข้อมูลนำเข้าที่ทำความสะอาดแล้ว |
+| SavingAmount | Ratio, THB | จำนวนเงินออมรายเดือนที่รายงาน | ข้อมูลนำเข้าที่ทำความสะอาดแล้ว |
+| TotalIncome | Ratio, THB | ผลรวมองค์ประกอบรายรับ 4 ประเภท; เป็น NA หากองค์ประกอบที่จำเป็นเป็น NA | คำนวณขึ้น |
+| TotalExpense | Ratio, THB | ผลรวมองค์ประกอบรายจ่าย 9 ประเภท; เป็น NA หากองค์ประกอบที่จำเป็นเป็น NA | คำนวณขึ้น |
+| NetBalance | Ratio, THB | TotalIncome ลบ TotalExpense; เป็น NA หากตัวใดตัวหนึ่งเป็น NA | คำนวณขึ้น |
+| ExpenseRatio | Ratio, percent | TotalExpense / TotalIncome × 100; เป็น NA เมื่อเศษ/ส่วนหาย หรือ TotalIncome=0 | คำนวณขึ้น |
+| FoodRatio ถึง OtherExpenseRatio | Ratio, percent | CategoryExpense / TotalExpense × 100; เป็น NA เมื่อค่าหายหรือรายจ่ายรวมเป็นศูนย์/หาย | คำนวณขึ้น |
 | MoneySufficiency_Code | Ordinal | 1=เพียงพอและมีเงินเหลือ; 2=เพียงพอพอดี; 3=ไม่เพียงพอบางเดือน; 4=ไม่เพียงพอเป็นประจำ | Outcome |
-| MoneySufficiency_Group | Nominal | Sufficient for codes 1–2; Insufficient for codes 3–4 | Comparison group |
-| ShortageMonths_Code | Ordinal count | 0–3 months | Supporting outcome |
-| PlanSpending_Code through ImpulsePurchase_Code | Ordinal numerical code | Observed values 1–5; original anchors unavailable | Behavior codes |
+| MoneySufficiency_Group | Nominal | Sufficient สำหรับรหัส 1–2; Insufficient สำหรับรหัส 3–4 | กลุ่มเปรียบเทียบ |
+| ShortageMonths_Code | Ordinal count | 0–3 เดือน | ผลลัพธ์ประกอบ |
+| PlanSpending_Code ถึง ImpulsePurchase_Code | รหัสตัวเลขแบบอันดับ | ค่าที่พบ 1–5; ไม่มี anchors ดั้งเดิม | รหัสพฤติกรรม |
 
-Zeros represent genuine zero amounts. Missing values are never silently treated as zero.
+ศูนย์หมายถึงจำนวนเงินศูนย์จริง ค่าสูญหายจะไม่ถูกปฏิบัติเป็นศูนย์โดยปริยาย

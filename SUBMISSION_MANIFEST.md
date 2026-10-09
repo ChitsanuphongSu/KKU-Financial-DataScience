@@ -1,20 +1,20 @@
-# Submission Manifest
+# รายการสิ่งส่งมอบ (Submission Manifest)
 
-## Public GitHub Package
+## ชุดเผยแพร่สาธารณะบน GitHub
 
-`README.md`, `notebooks/Final_Project_Analysis.ipynb`, `src/`, approved aggregate tables, `outputs/figures/public/`, and `docs/` form the public package.
+ชุดสาธารณะประกอบด้วย `README.md`, `notebooks/Final_Project_Analysis.ipynb`, `src/`, ตารางผลสรุปแบบ aggregate, `outputs/figures/public/` และ `docs/`
 
-## Instructor-Only Package
+## ชุดสำหรับผู้สอนเท่านั้น
 
-The approved final PowerPoint may be submitted privately to the instructor under course controls. It is intentionally excluded from public GitHub.
+PowerPoint ฉบับสุดท้ายที่อนุมัติแล้วอาจส่งให้ผู้สอนเป็นการส่วนตัวภายใต้การควบคุมของรายวิชา และตั้งใจไม่เผยแพร่บน GitHub สาธารณะ
 
-## Intentionally Excluded
+## สิ่งที่ตั้งใจยกเว้นจาก GitHub สาธารณะ
 
-Raw survey data, cleaned workbooks, Analysis_Data, respondent-level processed data, private investigation tables, raw-observation visuals, and the approved final presentation are excluded from public GitHub for privacy.
+ข้อมูลแบบสอบถามดิบ workbooks ที่ทำความสะอาดแล้ว `Analysis_Data` ข้อมูลประมวลผลระดับผู้ตอบ ตารางตรวจสอบส่วนบุคคล ภาพจุดสังเกตการณ์รายบุคคล และ PowerPoint ฉบับสุดท้าย ถูกยกเว้นเพื่อคุ้มครองความเป็นส่วนตัว
 
-## Private Master-Only Files
+## ไฟล์ส่วนตัวที่ไม่อยู่ในชุดสาธารณะ
 
-RAW_DATA.csv, KKU_Financial_Cleaning.xlsx, Data_Dictionary.xlsx, Cleaning_Log.xlsx, and any respondent-level output remain private.
+`RAW_DATA.csv`, `KKU_Financial_Cleaning.xlsx`, `Data_Dictionary.xlsx`, `Cleaning_Log.xlsx` และผลลัพธ์ระดับผู้ตอบทั้งหมดเป็นข้อมูลส่วนตัว
 
 ## Notebook
 
@@ -24,10 +24,10 @@ RAW_DATA.csv, KKU_Financial_Cleaning.xlsx, Data_Dictionary.xlsx, Cleaning_Log.xl
 
 `src/`
 
-## Documentation
+## เอกสารประกอบ
 
 `docs/`
 
-## Reproducibility
+## การทำซ้ำผลลัพธ์
 
-The public walkthrough reproduces the reporting context using approved aggregate tables and aggregate-only figures. Full respondent-level regeneration requires private data supplied separately under appropriate access controls.
+walkthrough สาธารณะทำซ้ำบริบทการรายงานได้จากตาราง aggregate และภาพ aggregate-only ที่อนุมัติแล้ว การสร้างผลระดับผู้ตอบแบบครบถ้วนต้องใช้ข้อมูลส่วนตัวที่จัดให้แยกต่างหากภายใต้การควบคุมที่เหมาะสม

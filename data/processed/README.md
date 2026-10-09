@@ -1,3 +1,3 @@
-# Processed respondent-level data exclusion
+# การยกเว้นข้อมูลประมวลผลระดับผู้ตอบ
 
-Analysis_Data and cleaned respondent-level workbooks are intentionally excluded from this public-safe repository. Their combination of financial values, demographics, and ordinal responses creates re-identification and sensitive-data risk in a sample of 30 respondents.
+`Analysis_Data` และ workbooks ที่ทำความสะอาดแล้วระดับผู้ตอบ ถูกยกเว้นจาก repository สาธารณะโดยตั้งใจ การรวมกันของค่าทางการเงิน ข้อมูลประชากรศาสตร์ และคำตอบแบบลำดับขั้น อาจทำให้เกิดความเสี่ยงในการระบุตัวตนซ้ำได้ในกลุ่มตัวอย่าง 30 คน

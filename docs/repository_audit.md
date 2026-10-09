@@ -1,33 +1,33 @@
-# Repository Audit
+# บันทึกการตรวจสอบ Repository
 
-## Locations
+## ขอบเขต
 
-- Master read-only reference: local master project, intentionally not published
-- New repository: this repository root
+- โครงการอ้างอิงเดิมเป็นแบบ read-only และไม่เผยแพร่
+- เอกสารนี้ครอบคลุม repository สาธารณะปัจจุบัน
 
-## Selective inclusions
+## สิ่งที่คัดเลือกไว้ในชุดสาธารณะ
 
-- Core cleaning, analysis-data, EDA, sensitivity, and correlation scripts.
-- Approved aggregate tables and aggregate-only public figures under `outputs/figures/public/`.
-- Reader notebook and public-facing documentation generated in this repository.
+- สคริปต์หลักสำหรับ cleaning, analysis-data, EDA, sensitivity และ correlation
+- ตาราง aggregate ที่อนุมัติและภาพสาธารณะ aggregate-only ภายใต้ `outputs/figures/public/`
+- Notebook สำหรับผู้อ่านและเอกสารสาธารณะใน repository นี้
 
-## Exclusions
+## สิ่งที่ยกเว้น
 
-- Raw survey CSV, all respondent-level workbooks/datasets, private investigation tables, raw-observation visuals, the approved final presentation (private instructor distribution only), output ZIP, preview renders, internal phase history, and runtime build artifacts.
-- Presentation-production script excluded because it depends on a bundled local presentation runtime and is not required to understand or reproduce the public analysis walkthrough.
+- CSV แบบสอบถามดิบ workbooks/datasets ระดับผู้ตอบ ตารางตรวจสอบส่วนตัว ภาพ raw-observation งานนำเสนอฉบับสุดท้าย (สำหรับผู้สอนเท่านั้น) ZIP ภาพ preview ประวัติภายใน และ runtime build artifacts
+- สคริปต์สร้าง presentation ถูกยกเว้น เพราะขึ้นกับ runtime เฉพาะเครื่องและไม่จำเป็นต่อการทำความเข้าใจ walkthrough สาธารณะ
 
-## Dependency and path review
+## การตรวจสอบ dependencies และ paths
 
-Copied Python scripts use `Path(__file__).resolve().parents[1]` and contain no machine-specific paths. They expect private input workbooks at repository root, so full execution is intentionally limited by the privacy policy.
+สคริปต์ Python ใช้ `Path(__file__).resolve().parents[1]` และไม่มี path เฉพาะเครื่อง สคริปต์คาดหวัง workbooks ส่วนตัวที่ราก repository ดังนั้นการรันแบบเต็มจึงถูกจำกัดโดยนโยบายความเป็นส่วนตัวโดยตั้งใจ
 
-## Reproducibility status
+## สถานะการทำซ้ำผลลัพธ์
 
-The public notebook uses only aggregate tables and aggregate-only release figures. No scientific analysis was changed to create the public visual layer. Full source-pipeline execution is not performed because the private raw/processed data are intentionally absent.
+Notebook สาธารณะใช้เพียงตาราง aggregate และภาพ aggregate-only ไม่มีการเปลี่ยนการวิเคราะห์ทางวิทยาศาสตร์เพื่อสร้างชั้นภาพสาธารณะ และไม่รัน source pipeline แบบเต็มเพราะข้อมูลดิบ/ประมวลผลส่วนตัวถูกยกเว้นโดยตั้งใจ
 
-## Git safety
+## ความปลอดภัยของ Git
 
-Git is initialized only in this new repository. No remote is configured and nothing is pushed.
+Git ทำงานเฉพาะใน repository นี้ และชุดสาธารณะเผยแพร่เฉพาะไฟล์ที่ผ่านการตรวจสอบความเป็นส่วนตัวแล้ว
 
-## Master integrity
+## ความครบถ้วนของไฟล์อ้างอิงเดิม
 
-Important master hashes were recorded before copy and compared after packaging. Result: PASS.
+มีการบันทึก hash ของไฟล์สำคัญก่อนจัดชุด และเปรียบเทียบหลังการจัดแพ็กเกจ ผลลัพธ์: PASS

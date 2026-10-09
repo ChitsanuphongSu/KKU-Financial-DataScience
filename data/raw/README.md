@@ -1,3 +1,3 @@
-# Raw data exclusion
+# การยกเว้นข้อมูลดิบ
 
-Raw Google Form survey responses are intentionally excluded. They contain timestamps, free-text responses, detailed demographics, and respondent-level financial information. Access, when appropriate, must be arranged privately with the project team.
+คำตอบแบบสอบถามดิบจาก Google Form ถูกยกเว้นโดยตั้งใจ เพราะมีเวลาในการตอบ ข้อความอิสระ ข้อมูลประชากรศาสตร์ละเอียด และข้อมูลการเงินระดับผู้ตอบ หากจำเป็นต้องเข้าถึง ต้องดำเนินการเป็นการส่วนตัวกับทีมโครงการ

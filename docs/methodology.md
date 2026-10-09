@@ -1,7 +1,7 @@
-# Methodology
+# ระเบียบวิธีวิเคราะห์ (Methodology)
 
-The study is an exploratory analysis of a voluntary self-reported KKU student sample, N=30. It uses cell-level cleaning, strict missing-value propagation for financial totals, descriptive statistics with median/IQR for skewed amounts, and descriptive Sufficient versus Insufficient comparisons.
+การศึกษานี้เป็นการวิเคราะห์เชิงสำรวจของกลุ่มตัวอย่างนักศึกษา มข. ที่ตอบแบบสอบถามด้วยตนเองโดยสมัครใจ จำนวน N=30 ใช้การทำความสะอาดระดับเซลล์ การส่งต่อค่าสูญหายอย่างเคร่งครัดในการคำนวณยอดรวมทางการเงิน สถิติเชิงพรรณนาด้วยค่ามัธยฐาน/IQR สำหรับข้อมูลที่เบ้ และการเปรียบเทียบเชิงพรรณนาระหว่างกลุ่ม Sufficient กับ Insufficient
 
-MoneySufficiency_Code is ordinal: 1 through 4 move from sufficient with money remaining to regularly insufficient. Spearman rank correlation was the primary association method because outcomes/behavior codes are ordinal and financial variables can be skewed. Pairwise complete observations determine each correlation N. Two-sided permutation p-values use 20,000 fixed-seed permutations.
+`MoneySufficiency_Code` เป็นตัวแปรอันดับ โดยรหัส 1 ถึง 4 เรียงจากเพียงพอและมีเงินเหลือไปจนถึงไม่เพียงพอเป็นประจำ ใช้สหสัมพันธ์แบบสเปียร์แมนเป็นวิธีหลัก เพราะตัวแปรผลลัพธ์/รหัสพฤติกรรมเป็นข้อมูลอันดับและตัวแปรการเงินอาจมีการกระจายเบ้ จำนวน N ของแต่ละสหสัมพันธ์กำหนดจากคู่ข้อมูลที่สมบูรณ์ และใช้ permutation p-value แบบสองด้านจำนวน 20,000 รอบด้วย fixed seed
 
-ExpenseRatio=4,540% was retained after verification. A sensitivity analysis excluding it temporarily assessed influence; it did not create corrected or preferred data. TotalIncome and NetBalance are mathematically coupled because NetBalance=TotalIncome-TotalExpense. Correlation is not causal, and behavior-code anchors are unavailable.
+`ExpenseRatio=4,540%` ถูกเก็บไว้หลังการตรวจสอบ การวิเคราะห์ความไวที่ตัดค่านี้ออกชั่วคราวมีวัตถุประสงค์เพื่อประเมินอิทธิพล ไม่ได้สร้างข้อมูลที่แก้ไขแล้วหรือผลที่ควรเลือกใช้แทน `TotalIncome` และ `NetBalance` มี mathematical coupling เพราะ `NetBalance=TotalIncome-TotalExpense` สหสัมพันธ์ไม่ใช่เหตุและผล และไม่มี anchors ของรหัสพฤติกรรมดั้งเดิม

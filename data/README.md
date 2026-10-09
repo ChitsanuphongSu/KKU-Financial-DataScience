@@ -1,3 +1,3 @@
-# Data policy
+# นโยบายข้อมูล
 
-This repository contains approved aggregate tables and figures under `outputs/`, not raw or respondent-level data. The excluded private data support the original cleaning and pipeline scripts. Public readers can inspect the documented workflow and approved aggregates; a private data-access arrangement is required to rerun the full pipeline.
+Repository นี้มีเฉพาะตารางและภาพผลสรุปแบบ aggregate ที่อนุมัติแล้วภายใต้ `outputs/` ไม่มีข้อมูลดิบหรือข้อมูลระดับผู้ตอบ ข้อมูลส่วนตัวที่ยกเว้นไว้รองรับสคริปต์ cleaning และ pipeline ฉบับเดิม ผู้อ่านสาธารณะสามารถตรวจสอบขั้นตอนและผลสรุปได้ ส่วนการรัน pipeline แบบครบถ้วนต้องมีข้อตกลงเข้าถึงข้อมูลส่วนตัว
